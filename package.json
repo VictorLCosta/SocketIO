@@ -1,0 +1,24 @@
+{
+  "name": "socketio",
+  "version": "1.0.0",
+  "description": "Project of an RTA chat made with SocketIO and NodeJs. Performed for study purposes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorLCosta/SocketIO.git"
+  },
+  "author": "VictorLCosta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorLCosta/SocketIO/issues"
+  },
+  "homepage": "https://github.com/VictorLCosta/SocketIO#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
+  }
+}
