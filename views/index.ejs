@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chat</title>
+    <h2>Chat do Guia</h2>
+    <input type="text" name="" id="msg" />
+    <input type="text" name="" id="username" placeholder="Seu nome de usuário"/>
+    <button onclick="send">Enviar</button>
 </head>
 <body>
     
@@ -12,6 +16,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js">
     var socket = io("http://localhost:8080");
 
-    socket.emit("welcomeStranger", {name: "Victor"});
+    function send(){
+        var msg = document.getElementById("msg").value;
+        var username = document.getElementById("username").value;
+
+        socket.emit("msg", {msg: msg, username: username})
+    }
 </script>
 </html>

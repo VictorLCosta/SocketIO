@@ -5,8 +5,8 @@ const http = require("http").createServer(app);
 var io = require("socket.io")(http);
 
 io.on("connection", (socket) => {
-    socket.on("welcomeStranger", (data) => {
-        console.log(data);
+    socket.on("disconnect", () => {
+        
     });
 });
 
