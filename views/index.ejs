@@ -6,21 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <h2>Chat do Guia</h2>
+    <div id="chat">
+
+    </div>
     <input type="text" name="" id="msg" />
     <input type="text" name="" id="username" placeholder="Seu nome de usuário"/>
-    <button onclick="send">Enviar</button>
+    <button id="btnSend">Enviar</button>
 </head>
 <body>
     
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js">
     var socket = io("http://localhost:8080");
 
+    document.getElementById("btnSend").addEventListener("click", send, false)
+
+    socket.on("disconnect", () => {
+
+    })
+
     function send(){
-        var msg = document.getElementById("msg").value;
-        var username = document.getElementById("username").value;
+
+        var msgField = document.getElementById("msg");
+        var usernameField = document.getElementById("username");
+
+        var username = msgField.value;
+        var msg = usernameField.value;
 
         socket.emit("msg", {msg: msg, username: username})
     }
+
+    socket.on("showMsg", (data) => {
+        var chat = document.getElementById("chat");
+        var p = document.createElement("p");
+        p.innerHTML = data.msg + ": " + data.msg;
+        chat.append(p)
+    })
 </script>
 </html>

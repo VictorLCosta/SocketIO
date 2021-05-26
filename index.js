@@ -8,6 +8,11 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         
     });
+
+    socket.on("msg", (data) => {
+        console.log(data);
+        io.emit("showMsg", data)
+    });
 });
 
 app.set("view engine", "ejs");
