@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-    <h2>Chat do Guia</h2>
-    <div id="chat">
-
-    </div>
-    <input type="text" name="" id="msg" />
-    <input type="text" name="" id="username" placeholder="Seu nome de usuário"/>
-    <button id="btnSend">Enviar</button>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
+    <title>Chat</title> 
 </head>
 <body>
-    
+    <div class="container-fluid">
+        <h2>Chat do Guia</h2>
+        <div id="chat">
+
+        </div>
+        <input type="text" name="" id="msg" class="form-control" />
+        <input type="text" name="" id="username" class="form-control" placeholder="Seu nome de usuário"/>
+        <button id="btnSend" class="btn btn-primary">Enviar</button>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js">
     var socket = io("http://localhost:8080");
